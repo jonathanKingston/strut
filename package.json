@@ -9,7 +9,7 @@
   "main": "./lib/strut",
   "dependencies": {
     "crock": "0.0.2",
-    "allot": "0.0.3"
+    "allot": "0.1.0"
   },
   "devDependencies": {
     "mocha": "1.17.1",
