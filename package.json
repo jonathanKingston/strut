@@ -2,7 +2,7 @@
   "author": "Jonathan Kingston",
   "name": "strut",
   "description": "Simple object base class builder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": "https://github.com/jonathanKingston/strut.git"
   },
