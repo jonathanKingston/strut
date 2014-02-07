@@ -12,6 +12,10 @@ test-w:
 
 test-cov: coverage
 
+doc:
+	jsdoc lib/ README.md -d pages/
+	@echo "  Don't forget to commit the changes in the pages sub module"
+
 coverage:
 	NODE_ENV=test YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha \
 		--require blanket \

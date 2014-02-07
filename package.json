@@ -4,14 +4,14 @@
   "description": "Simple object base class builder",
   "license": "LGPL-3.0",
   "url": "http://jonathankingston.co.uk/",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": {
     "url": "https://github.com/jonathanKingston/strut.git"
   },
   "main": "./lib/strut",
   "dependencies": {
     "component-type": "1.0.0",
-    "allot": "0.1.0"
+    "allot": "0.1.4"
   },
   "devDependencies": {
     "mocha": "1.17.1",
