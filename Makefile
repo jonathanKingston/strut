@@ -1,11 +1,11 @@
 REPORTER = dot
 
 test:
-	@NODE_ENV=test ./node_modules/.bin/mocha \
+	@NODE_ENV=test ./node_modules/.bin/mocha --recursive\
 		--reporter $(REPORTER)
 
 test-w:
-	@NODE_ENV=test ./node_modules/.bin/mocha \
+	@NODE_ENV=test ./node_modules/.bin/mocha --recursive\
 		--reporter $(REPORTER) \
 		--growl \
 		--watch
@@ -13,11 +13,11 @@ test-w:
 test-cov: coverage
 
 doc:
-	jsdoc lib/ README.md -d pages/
+	jsdoc lib/ README.md -d pages/ -r
 	@echo "  Don't forget to commit the changes in the pages sub module"
 
 coverage:
-	NODE_ENV=test YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha \
+	NODE_ENV=test YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha --recursive\
 		--require blanket \
 		--reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
 
