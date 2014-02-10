@@ -59,6 +59,19 @@
       assert.isUndefined(dugger.engineSize, 'Check an invalid type returns as undefined');
     });
 
+    it('should validate isValid when valid inputs are passed', function () {
+      var Barrel = new Strut();
+      Barrel.has('beerName', {
+        type: 'string'
+      });
+
+      var keg = new Barrel({
+        beerName: 'Guinness'
+      });
+
+      assert.isTrue(keg.isValid());
+    });
+
   });
 
 }());
