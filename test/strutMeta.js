@@ -39,6 +39,26 @@
 
     });
 
+    it('should return undefined for types that are not valid', function () {
+      var Digger = new Strut();
+
+      Digger.has('engineSize', {
+        type: 'engineSizeometerType'
+      });
+
+      Digger.has('type', {
+        type: 'string'
+      });
+
+      var dugger = new Digger({
+        engineSize: 12,
+        type: 'OneWithABigSpade'
+      });
+
+      assert.strictEqual(dugger.type, 'OneWithABigSpade', 'Check an valid type returns as expected');
+      assert.isUndefined(dugger.engineSize, 'Check an invalid type returns as undefined');
+    });
+
   });
 
 }());

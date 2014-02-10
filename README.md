@@ -4,6 +4,37 @@ A simple object base for node.js and plain ol JavaScript.
 
 The packages motives at the moment is to provide similar behavior to Moose from Perl.
 
+## Class definition
+```js
+var Person = new Strut();
+
+Person.has('firstName', {
+  type: 'string'
+});
+
+Person.has('lastName', {
+  type: 'string'
+});
+```
+
+## Creating a class instance
+```js
+var me = new Person({
+  'age': 12,
+  'firstName': 'Jonathan',
+  'lastName': 'kingston'
+});
+```
+
+`me.getInputValue('age');`
+*12*
+
+`me.get('age');`
+*undefined*
+
+`me.isValid();`
+*false*
+
 ## Licence
 
 Copyright (c) 2014 Jonathan Kingston
