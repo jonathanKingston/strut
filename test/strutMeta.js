@@ -39,6 +39,39 @@
 
     });
 
+    it('should return undefined for types that are not valid', function () {
+      var Digger = new Strut();
+
+      Digger.has('engineSize', {
+        type: 'engineSizeometerType'
+      });
+
+      Digger.has('type', {
+        type: 'string'
+      });
+
+      var dugger = new Digger({
+        engineSize: 12,
+        type: 'OneWithABigSpade'
+      });
+
+      assert.strictEqual(dugger.type, 'OneWithABigSpade', 'Check an valid type returns as expected');
+      assert.isUndefined(dugger.engineSize, 'Check an invalid type returns as undefined');
+    });
+
+    it('should validate isValid when valid inputs are passed', function () {
+      var Barrel = new Strut();
+      Barrel.has('beerName', {
+        type: 'string'
+      });
+
+      var keg = new Barrel({
+        beerName: 'Guinness'
+      });
+
+      assert.isTrue(keg.isValid());
+    });
+
   });
 
 }());
