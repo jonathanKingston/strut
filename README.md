@@ -22,18 +22,20 @@ Person.has('lastName', {
 var me = new Person({
   'age': 12,
   'firstName': 'Jonathan',
-  'lastName': 'kingston'
+  'lastName': 'Kingston'
+});
+```
+*throws TypeError*
+
+
+var me = new Person({
+  'firstName': 'Jonathan',
+  'lastName': 'Kingston'
 });
 ```
 
-`me.getInputValue('age');`
-*12*
-
-`me.get('age');`
-*undefined*
-
-`me.isValid();`
-*false*
+`me.get('lastName');`
+*Kingston*
 
 ## Licence
 

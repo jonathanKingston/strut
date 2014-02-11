@@ -39,7 +39,7 @@
 
     });
 
-    it('should return undefined for types that are not valid', function () {
+    it('should throw errors for types that are not valid', function () {
       var Digger = new Strut();
 
       Digger.has('engineSize', {
@@ -50,26 +50,30 @@
         type: 'string'
       });
 
-      var dugger = new Digger({
-        engineSize: 12,
-        type: 'OneWithABigSpade'
-      });
+      assert.throw(function () {
+        return new Digger({
+          engineSize: 12,
+          type: 'OneWithABigSpade'
+        })
+      }, TypeError, null, 'Check an invalid type throws an error');
 
-      assert.strictEqual(dugger.type, 'OneWithABigSpade', 'Check an valid type returns as expected');
-      assert.isUndefined(dugger.engineSize, 'Check an invalid type returns as undefined');
-    });
+      assert.doesNotThrow(function () {
+        var Digger2 = new Strut();
 
-    it('should validate isValid when valid inputs are passed', function () {
-      var Barrel = new Strut();
-      Barrel.has('beerName', {
-        type: 'string'
-      });
+        Digger2.has('engineSize', {
+          type: 'string'
+        });
 
-      var keg = new Barrel({
-        beerName: 'Guinness'
-      });
+        Digger2.has('type', {
+          type: 'string'
+        });
 
-      assert.isTrue(keg.isValid());
+        return new Digger2({
+          engineSize: 12,
+          type: 'OneWithABigSpade'
+        })
+      }, TypeError, 'Check an invalid type throws an error');
+
     });
 
   });
