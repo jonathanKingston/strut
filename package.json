@@ -4,7 +4,7 @@
   "description": "Simple object base class builder",
   "license": "LGPL-3.0",
   "url": "http://jonathankingston.co.uk/",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "url": "https://github.com/jonathanKingston/strut.git"
   },
