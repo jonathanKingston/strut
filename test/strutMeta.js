@@ -37,6 +37,8 @@
 
       assert.strictEqual(staffMember.get('firstName'), 'Jonathan', 'Check can get value and is the same as expected');
 
+      assert.strictEqual(staffMember.firstName, 'Jonathan', 'Check can get value by property');
+
     });
 
     it('should throw errors for types that are not valid', function () {
