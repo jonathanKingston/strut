@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: strut.js</title>
+    <title>JSDoc: Source: types/boolean.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: strut.js</h1>
+    <h1 class="page-title">Source: types/boolean.js</h1>
     
     
 
@@ -27,31 +27,31 @@
         <article>
             <pre class="prettyprint source"><code>(function () {
 
-  var StrutMeta = require('./strutMeta');
-  var allot = require('allot');
+  var StrutType = require('../strutType');
+  var inherits = require('inherits');
+  var type = require('component-type');
 
   /**
-   * Builds a strut meta class
-   * @namespace Strut
-   * @exports Strut
-   * @class StrutMeta Strut
-   * @returns StrutMeta
+   * @augments StrutType
+   * @exports BooleanType
+   * @class
    */
-  var Strut = function () {
-    var StrutInstance = function StrutInstance(attributeValues) {
-      this.attributes = {};
-      this.setAttributes(attributeValues);
-    };
-    
-    allot.inherits(StrutInstance, StrutMeta);
+  var BooleanType = function BooleanType(value) {
+    this.value = value;
 
-
-    StrutInstance.prototype.attributeDefinitions = {};
-
-    return StrutInstance;
+    this.typeName = 'boolean';
   };
 
-  module.exports = Strut;
+  inherits(BooleanType, StrutType);
+
+  BooleanType.prototype.isValid = function isValid() {
+    if ('boolean' === type(this.value)) {
+      return true;
+    }
+    return false;
+  };
+
+  module.exports = BooleanType;
 
 }());</code></pre>
         </article>

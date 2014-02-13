@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: strut.js</title>
+    <title>JSDoc: Source: types/string.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: strut.js</h1>
+    <h1 class="page-title">Source: types/string.js</h1>
     
     
 
@@ -27,31 +27,22 @@
         <article>
             <pre class="prettyprint source"><code>(function () {
 
-  var StrutMeta = require('./strutMeta');
-  var allot = require('allot');
+  var StrutType = require('../strutType');
+  var inherits = require('inherits');
 
   /**
-   * Builds a strut meta class
-   * @namespace Strut
-   * @exports Strut
-   * @class StrutMeta Strut
-   * @returns StrutMeta
+   * @augments StrutType
+   * @exports StringType
+   * @class
    */
-  var Strut = function () {
-    var StrutInstance = function StrutInstance(attributeValues) {
-      this.attributes = {};
-      this.setAttributes(attributeValues);
-    };
-    
-    allot.inherits(StrutInstance, StrutMeta);
-
-
-    StrutInstance.prototype.attributeDefinitions = {};
-
-    return StrutInstance;
+  var StringType = function StringType(value) {
+    this.value = value;
+    this.typeName = 'string';
   };
 
-  module.exports = Strut;
+  inherits(StringType, StrutType);
+
+  module.exports = StringType;
 
 }());</code></pre>
         </article>

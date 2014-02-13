@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: strut.js</title>
+    <title>JSDoc: Source: strutType.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: strut.js</h1>
+    <h1 class="page-title">Source: strutType.js</h1>
     
     
 
@@ -27,31 +27,41 @@
         <article>
             <pre class="prettyprint source"><code>(function () {
 
-  var StrutMeta = require('./strutMeta');
-  var allot = require('allot');
+  var type = require('component-type');
 
   /**
-   * Builds a strut meta class
-   * @namespace Strut
-   * @exports Strut
-   * @class StrutMeta Strut
-   * @returns StrutMeta
+   * An abstract definition for a type
+   * @abstract
+   * @param {string|number|boolean|object|array} value the value that should be validated
+   * @exports StrutType
+   * @class StrutType
    */
-  var Strut = function () {
-    var StrutInstance = function StrutInstance(attributeValues) {
-      this.attributes = {};
-      this.setAttributes(attributeValues);
-    };
-    
-    allot.inherits(StrutInstance, StrutMeta);
+  var StrutType = function StrutType(value) {
+    this.value = value;
 
-
-    StrutInstance.prototype.attributeDefinitions = {};
-
-    return StrutInstance;
+    this.typeName = 'Abstract';
   };
 
-  module.exports = Strut;
+  /**
+   * Gets the typeName of this type
+   * @method get
+   * @memberof StrutType.prototype
+   */
+  StrutType.prototype.get = function isValid() {
+    return this.typeName;
+  };
+
+  /**
+   * Is valid returns a boolean response to if the input validated against the type
+   * @method isValid
+   * @returns {boolean}
+   * @memberof StrutType.prototype
+   */
+  StrutType.prototype.isValid = function isValid() {
+    return true;
+  };
+
+  module.exports = StrutType;
 
 }());</code></pre>
         </article>
