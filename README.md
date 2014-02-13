@@ -27,7 +27,7 @@ var me = new Person({
 ```
 *throws TypeError*
 
-
+```js
 var me = new Person({
   'firstName': 'Jonathan',
   'lastName': 'Kingston'
