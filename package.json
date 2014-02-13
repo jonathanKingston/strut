@@ -1,11 +1,15 @@
 {
-  "author": "Jonathan Kingston",
   "name": "strut",
   "description": "Simple object base class builder",
+  "homepage": "http://getstrut.com/",
+  "author": {
+    "name": "Jonathan Kingston",
+    "url": "http://jonathankingston.co.uk/"
+  },
   "license": "LGPL-3.0",
-  "url": "http://jonathankingston.co.uk/",
   "version": "0.1.1",
   "repository": {
+    "type": "git",
     "url": "https://github.com/jonathanKingston/strut.git"
   },
   "main": "./lib/strut",
@@ -19,7 +23,7 @@
     "browserify": "3.24.8",
     "coveralls": "2.7.1",
     "mocha-lcov-reporter": "0.0.1",
-    "blanket": "git+https://github.com/alex-seville/blanket.git",
+    "blanket": "1.1.5",
     "mocha-jshint": "0.0.7"
   },
   "optionalDependencies": {},
@@ -51,5 +55,8 @@
       "pattern": "strut/lib/",
       "data-cover-never": "node_modules"
     }
-  }
+  },
+  "keywords": [
+    "type", "class"
+  ]
 }
