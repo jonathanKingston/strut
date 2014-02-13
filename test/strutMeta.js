@@ -41,6 +41,21 @@
 
     });
 
+    it('should be able to set the values of an instance', function () {
+
+      var staffMember2 = new Person({
+        firstName: 'Michael',
+        lastName: 'Caine'
+      });
+
+      assert.isObject(staffMember2, 'For brevity lets check we have an instance');
+
+      assert.strictEqual(staffMember2.set('firstName', 'Scott'), 'Scott', 'Check the return is the new value');
+
+      assert.strictEqual(staffMember2.get('firstName'), 'Scott', 'Check the set value is the same by running get');
+
+    });
+
     it('should throw errors for types that are not valid', function () {
       var Digger = new Strut();
 
