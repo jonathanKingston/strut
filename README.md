@@ -1,8 +1,9 @@
 # Strut
 
-A simple object base for node.js and plain ol JavaScript.
+A simple object base for node.js and browser JavaScript.
 
-The packages motives at the moment is to provide similar behavior to Moose from Perl.
+The packages goal at the moment is to provide a similar behaviour to Moose from Perl for defining classes however wider plans are in the pipeline.
+A road map will be published soon.
 
 ## Class definition
 ```js
