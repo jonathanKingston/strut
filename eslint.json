@@ -1,0 +1,11 @@
+{
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "quotes": "single",
+    "valid-jsdoc": true,
+    "brace-style": true,
+    "max-len": 80
+  }
+}

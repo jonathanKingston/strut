@@ -10,6 +10,9 @@ test-w:
 		--growl \
 		--watch
 
+test-lint:
+	@eslint -c eslint.json lib
+
 test-cov: coverage
 
 doc:
