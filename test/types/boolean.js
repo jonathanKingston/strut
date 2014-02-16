@@ -11,18 +11,18 @@
     });
 
     it('Should be valid when boolean types are passed in', function () {
-      var myBoolean = new BooleanType(true);
+      var myBoolean = new BooleanType();
       assert.typeOf(myBoolean, 'object', 'Check to see returned type is an object');
-      assert.isTrue(myBoolean.isValid(), 'Check to see if isValid returns true');
+      assert.isTrue(myBoolean.isValid(true), 'Check to see if isValid returns true');
 
-      var myBoolean2 = new BooleanType(false);
-      assert.isTrue(myBoolean2.isValid(), 'Check to see if isValid returns true');
+      var myBoolean2 = new BooleanType();
+      assert.isTrue(myBoolean2.isValid(false), 'Check to see if isValid returns true');
 
-      var myBoolean3 = new BooleanType('fail');
-      assert.isFalse(myBoolean3.isValid(), 'Check to see if isValid returns false');
+      var myBoolean3 = new BooleanType();
+      assert.isFalse(myBoolean3.isValid('fail'), 'Check to see if isValid returns false');
 
-      var myBoolean4 = new BooleanType(12);
-      assert.isFalse(myBoolean4.isValid(), 'Check to see if isValid returns false');
+      var myBoolean4 = new BooleanType();
+      assert.isFalse(myBoolean4.isValid(12), 'Check to see if isValid returns false');
     });
 
   });
