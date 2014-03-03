@@ -3,9 +3,9 @@
     "node": true
   },
   "rules": {
-    "quotes": "single",
-    "valid-jsdoc": true,
-    "brace-style": true,
-    "max-len": 80
+    "quotes": [2, "single"],
+    "valid-jsdoc": [2, true],
+    "brace-style": [2, true],
+    "max-len": [2, 80]
   }
 }
